@@ -1,28 +1,33 @@
+# Import
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/user", tags=["user"])
+router = APIRouter(prefix='/user', tags=['user'])
 
 
+
+# GET
 @router.get('/')
 async def all_users():
-    pass
-
+  pass
 
 @router.get('/user_id')
 async def user_by_id():
-    pass
+  pass
 
 
+# POST
 @router.post('/create')
 async def create_user():
-    pass
+  pass
 
 
+# PUT
 @router.put('/update')
 async def update_user():
-    pass
+  pass
 
 
-@router.delete('/delete')
+# DELETE
+@router.put('/delete')
 async def delete_user():
-    pass
+  pass

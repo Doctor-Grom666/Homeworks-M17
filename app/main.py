@@ -1,14 +1,17 @@
+# Import
 from fastapi import FastAPI
-from app.routers import task, user
-import app.models.user as user_model
-import app.models.task as task_mode
+from routers import task, user
 
 app = FastAPI()
 
-app.include_router(task.router)
-app.include_router(user.router)
 
 
+# GET
 @app.get('/')
 async def welcome():
-    return {"message": "Welcome to Taskmanager"}
+  return {"message": "Welcome to Taskmanager"}
+
+
+
+app.include_router(task.router)
+app.include_router(user.router)

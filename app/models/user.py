@@ -1,19 +1,14 @@
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy.schema import CreateTable
-from typing import List, Optional
+# Import
 from app.backend.db import Base
-
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = 'users'
-
-    id: Mapped[int] = mapped_column(primary_key=True, index=True)
-    username: Mapped[Optional[str]]
-    firstname: Mapped[Optional[str]]
-    lastname: Mapped[Optional[str]]
-    age: Mapped[Optional[int]]
-    slug: Mapped[Optional[str]] = mapped_column(unique=True, index=True)
-    tasks: Mapped[List['Task']] = relationship(back_populates='user')
-
-
-print(CreateTable(User.__table__))
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String)
+    firstname = Column(String)
+    lastname = Column(String)
+    age = Column(Integer)
+    slug = Column(String, unique=True, index=True)
+    tasks = relationship('Task', back_populates='user')

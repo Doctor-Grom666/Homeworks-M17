@@ -1,5 +1,5 @@
+# Import
 from pydantic import BaseModel
-
 
 class CreateUser(BaseModel):
     username: str
@@ -7,20 +7,17 @@ class CreateUser(BaseModel):
     lastname: str
     age: int
 
-
-class UpdateUser(BaseModel):
+class UpdateUser (BaseModel):
     firstname: str
     lastname: str
     age: int
 
-
-class CreateTask(BaseModel):
+class CreateTask (BaseModel):
     title: str
     content: str
     priority: int
 
-
-class UpdateTask(BaseModel):
+class UpdateTask (BaseModel):
     title: str
     content: str
     priority: int
